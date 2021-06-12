@@ -11,8 +11,8 @@ vector<int> solution(vector<int> array, vector<vector<int>> commands) {
         for (int i=commands[n][0]-1; i<commands[n][1];i++)
             temp.push_back(array[i]);
         int t = 0;
-        for (int x = 0; x < temp.size; x++) {
-            for (int y = 0; y < temp.size - x - 1; y++) {
+        for (int x = 0; x < temp.size(); x++) {
+            for (int y = 0; y < temp.size() - x - 1; y++) {
                 if (temp[y] > temp[y + 1]) {
                     t = temp[y];
                     temp[y] = temp[y + 1];
@@ -26,16 +26,3 @@ vector<int> solution(vector<int> array, vector<vector<int>> commands) {
     return answer;
 }
 
-void main() {
-    vector<int> arr;
-    arr.push_back(1);
-    arr.push_back(5);
-    arr.push_back(2);
-    arr.push_back(6);
-    arr.push_back(3);
-    arr.push_back(7);
-    arr.push_back(4);
-
-
-    vector<vector<int>> com;
-}
