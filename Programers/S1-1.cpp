@@ -10,7 +10,7 @@ int main()
     int arr[] = { 1, 5, 2, 6, 3, 7, 4 };
     int com[][3] = { {2, 5, 3},{4, 4, 1 }, {1, 7, 3} };
     int* ret = Knumber(arr, com);
-    for (int t=0 ; t < sizeof(ret) / sizeof(int);t++) {
+    for (int t=0 ; t < 4;t++) {
         cout << ret[t] << endl;
     }
 
@@ -20,25 +20,24 @@ int main()
 
 int* Knumber(int array[], int commands[][3]) {
         int result[50];
-        int row = sizeof(commands) / sizeof(commands[0]); 
         // 3: 2차원 배열의 세로 크기를 구할 때는 
         // 배열이 차지하는 전체 공간을 가로 한 줄의 크기로 나눠줌
 
-        for (int g = 0; g < row; g++) {
+        for (int g = 0; g < 3; g++) {
             int temp[100];
-            int i(commands[g][0]);
-            int j(commands[g][1]);
-            int k(commands[g][2]);
-            for (int n = 0; n < j - i + 1; i++) {
-                temp[i] = array[i + n - 1];
+            int i=commands[g][0];
+            int j=commands[g][1];
+            int k=commands[g][2];
+            for (int n = 0; n < j - i + 1; n++) {
+                temp[n] = array[i + n - 1];
             }
             sort(temp);
-            temp[k - 1] = result[g];
+            result[g]=temp[k-1];
         }  
         return result;
     }
 void sort(int arr[]) {
-        int len = sizeof(arr) / sizeof(int);
+        int len = 4;
         for (int i = 0; i < len - 1; i++) {
             for (int j = 1; j < len - i; j++) {
                 if (arr[j - 1] > arr[j]) {
