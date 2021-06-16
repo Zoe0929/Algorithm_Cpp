@@ -7,18 +7,15 @@ using namespace std;
 int solution(string s)
 {
     int answer = -1;
-    stack<char> st1, st2;
-    for (int i = 0; i < s.length; i++) {
-        st1.push(s[i]);
-        }
-    while (0) { 
-        if (st2.empty()) {
-            st2.push(st1.top());
-            st1.pop();
-        }
-        else if (st1.top() == st2.top()) {
+    stack<char> st1;
+    //무조건 0이 출력되는 경우 :: 입력된 문장이 없거나 글자수가 홀수인 경우에는 무조건 0
+    if (s.empty() || s.size() % 2 != 0) {
+        answer = 0;
+    }
 
-        }
+    while (0) {
+
+
     }
     return answer;
 }
