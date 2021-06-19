@@ -3,8 +3,9 @@
 #include<string>
 #include<stack>
 
+
 using namespace std;
-const int MAX_SIZE = 1000000;
+const int MAX_SIZE = 100000;
 
 
 int main() {
@@ -18,6 +19,8 @@ int main() {
 	cin >> N;
 
 	int NEG[MAX_SIZE]; //오큰수를 저장할 배열
+
+
 	//배열 A에 저장될 수 입력받기
 	for (int i = 0; i < N; i++) {
 		cin >> A[i];
@@ -35,7 +38,7 @@ int main() {
 				while (!stk.empty())  stk.pop(); //stk.clear();
 				break;
 			}
-			else if (idx-1==N) {
+			else if (idx-1==N || i+1==N) {
 				NEG[i] = -1;
 				break;
 			}
@@ -43,7 +46,7 @@ int main() {
 		}
 		}
 	for (int j=0;j<N;j++)
-		cout <<NEG[j] << ' ';
+		cout <<NEG[j] << " ";
 	return 0;
 }
 
