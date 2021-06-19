@@ -4,7 +4,7 @@
 #include<stack>
 
 using namespace std;
-const int MAX_SIZE = 100000;
+const int MAX_SIZE = 1000000;
 
 
 int main() {
