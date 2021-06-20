@@ -5,20 +5,20 @@
 
 
 using namespace std;
-const int MAX_SIZE = 100000;
+
 
 
 int main() {
 	//변수 선언
 
 	int N = 0, idx=0; //배열 A의 크기
-	int A[MAX_SIZE]; //배열 A
+	int A[100001]; //배열 A
 	stack<int> stk;
 
 	//n 입력 받기
 	cin >> N;
 
-	int NEG[MAX_SIZE]; //오큰수를 저장할 배열
+	int NEG[100001]; //오큰수를 저장할 배열
 
 	if (N == 1) {
 		NEG[0] = -1;
