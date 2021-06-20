@@ -20,6 +20,11 @@ int main() {
 
 	int NEG[MAX_SIZE]; //오큰수를 저장할 배열
 
+	if (N == 1) {
+		NEG[0] = -1;
+		cout << NEG[0] << endl;
+		return 0;
+	}
 
 	//배열 A에 저장될 수 입력받기
 	for (int i = 0; i < N; i++) {
