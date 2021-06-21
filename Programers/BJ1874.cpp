@@ -1,5 +1,6 @@
 #include<iostream>
 #include<stack>
+#include<string>
 
 using namespace std;
 
@@ -7,7 +8,7 @@ using namespace std;
 int main() {
 	int n,mem=1,s_in=0,re_in=0;
 	int arr[10000];
-	char result[10000];
+	string s;
 
 	stack<int> st;
 	cin >> n;
@@ -17,11 +18,11 @@ int main() {
 	while (1) {
 		if (st.empty() || st.top() < arr[s_in]) {
 			st.push(mem++);
-			result[re_in++] = '+';
+			s += '+\n';
 		}
 		else if (st.top() == arr[s_in]) {
 			st.pop();
-			result[re_in++] = '-';
+			s += '-\n';
 			mem++;
 		}
 		else {
@@ -30,8 +31,8 @@ int main() {
 		}
 		if (st.empty() && s_in == n + 1) break;
 	}
-	for (int i = 0; i < re_in; i++)
-		cout << result[i] << endl;
+
+	cout << s << endl;
 	return 0;
 }
 
