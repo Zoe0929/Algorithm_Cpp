@@ -10,17 +10,34 @@ int main() {
 	queue<int> q;
 	vector<int> result;
 	cin >> N >> k;
-	int i = 1;
+	
+	for (int n = 1; n <= N; n++) {
+		q.push(n);
+	}
 	while (!q.empty()) {
-		if (i == 3) {
-			result.push_back(q.front());
-			q.pop();
+		int i = 1;
+		if (q.size() >= k) {
+			while (1) {
+				if (i == 3) {
+					result.push_back(q.front());
+					q.pop();
+					break;
+				}
+				else {
+					q.push(q.front());
+					q.pop();
+				}
+				i++;
+		}
 		}
 		else {
-			q.push(q.front());
-			q.pop();
+			for (int j = 0; j < k; j++) {
+				q.push(q.front());
+				q.pop();
+			}
+			result.push_back(q.front());
 		}
-		i++;
+		
 	}
 	for (auto i : result) cout << i << ' ';
 }
