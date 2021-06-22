@@ -18,25 +18,32 @@ int main() {
 		int i = 1;
 		if (q.size() >= k) {
 			while (1) {
-				if (i == 3) {
-					result.push_back(q.front());
-					q.pop();
-					break;
-				}
+				if (i == k) {
+						result.push_back(q.front());
+						q.pop();
+						break;
+					}
 				else {
-					q.push(q.front());
-					q.pop();
-				}
-				i++;
+						q.push(q.front());
+						q.pop();
+					}
+			i++;
+			}
 		}
-		}
-		else {
-			for (int j = 0; j < k; j++) {
+		else if (q.size()>1) {
+			for (int j = 1; j < k; j++) {
 				q.push(q.front());
 				q.pop();
 			}
+				result.push_back(q.front());
+				q.pop();
+			}
+		else
+		{
 			result.push_back(q.front());
+			q.pop();
 		}
+
 		
 	}
 	for (auto i : result) cout << i << ' ';
