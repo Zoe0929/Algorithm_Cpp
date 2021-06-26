@@ -12,7 +12,7 @@ vector<int> solution(vector<int> progresses, vector<int> speeds) {
 
     int count = 0;
     for (int i = 0; i < progresses.size(); i++) {
-        days.push_back(100 - progresses[i] / speeds[i]);
+        days.push_back((100 - progresses[i]) / speeds[i]);
     }
     for(int j=0;j<days.size();j++) {
         if (q.empty()) {
@@ -22,6 +22,7 @@ vector<int> solution(vector<int> progresses, vector<int> speeds) {
         else {
             if (q.front() > days[j]) {
                 count++;
+                q.pop();
                 q.push(days[j]);
         }
             else {
@@ -30,13 +31,16 @@ vector<int> solution(vector<int> progresses, vector<int> speeds) {
                 q.push(days[j]);
             }
         }
+        if (j + 1 == days.size()) {
+            answer.push_back(count);
+        }
     }
     return answer;
 }
 
 int main() {
-    vector<int> P = { 93, 30, 55 };
-    vector<int> S = { 1, 30, 5 };
+    vector<int> P = { 95, 90, 99, 99, 80, 99 };
+    vector<int> S = { 1, 1, 1, 1, 1, 1 };
     solution(P, S);
     return 0;
 }
