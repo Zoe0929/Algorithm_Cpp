@@ -6,33 +6,30 @@ using namespace std;
 
 int solution(vector<int> priorities, int location) {
     int answer = 0;
+    int J = priorities[0];
+    int loc = location+1;
     queue<pair<int, int>> q;
-    int J = priorities[location];
-    int count=0;
-
 
     for (int i = 0; i < priorities.size(); i++) {
-        if (J <= priorities[i]) {
-            count++;
-            J = priorities[i];
-        }
+        q.push(make_pair(i,priorities[i]));
     }
 
-
-    for (int j = 0; j < priorities.size(); j++) {
-        q.push(make_pair(priorities[j],j));
-    }
-    for (int k = 0; k < count; k++) {
-        q.push(q.front());
-        q.pop();
-    }
-    while (!q.empty()) {
-        int C=1;
-        if (q.front().first == location) {
-            answer = C;
-            break;
+    for (int j = 1; j < priorities.size(); j++) {
+        if (J < priorities[j]) {
+            J = q.front().first;
+            q.push(q.front());
+            q.pop();
+            loc++;
         }
-        else C++;
+        else if(j==priorities.size()-1 || J>-priorities[j]) {
+            answer = priorities.size()-loc;
+        }
     }
     return answer;
+}
+
+int main() {
+    vector<int> P = { 2,1,3,2 };
+    int location = 2;
+
 }
