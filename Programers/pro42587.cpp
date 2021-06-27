@@ -7,23 +7,32 @@ using namespace std;
 int solution(vector<int> priorities, int location) {
     int answer = 0;
     int J = priorities[0];
+    int count = 0;
     queue<pair<int, int>> q;
+    for (int k = 0; k < priorities.size(); k++) {
+        q.push(make_pair(k, priorities[k]));
+    }
 
     for (int i = 0; i < priorities.size(); i++) {
-        if (q.empty() || J>=priorities[i]) q.push(make_pair(i, priorities[i]));
-        else if (J < priorities[i]) {
-            q.push(q.front());
-            q.pop();
+        if (J < priorities[i]) {
+            for (int p = 0; p < count; p++) {
+                q.push(q.front());
+                q.pop();
+            }
             J = priorities[i];
+        }
+        else
+        {
+            count++;
         }
     }
     while (!q.empty())
     {
         answer++;
-        q.pop();
-        if (q.front().first == location-1) {
+        if (q.front().first == location) {
             break;
         }
+        q.pop();
     } 
     return answer;
 }
