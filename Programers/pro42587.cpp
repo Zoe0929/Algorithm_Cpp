@@ -7,29 +7,29 @@ using namespace std;
 int solution(vector<int> priorities, int location) {
     int answer = 0;
     int J = priorities[0];
-    int loc = location+1;
     queue<pair<int, int>> q;
 
     for (int i = 0; i < priorities.size(); i++) {
-        q.push(make_pair(i,priorities[i]));
-    }
-
-    for (int j = 1; j < priorities.size(); j++) {
-        if (J < priorities[j]) {
-            J = q.front().first;
+        if (q.empty() || J>=priorities[i]) q.push(make_pair(i, priorities[i]));
+        else if (J < priorities[i]) {
             q.push(q.front());
             q.pop();
-            loc++;
-        }
-        else if(j==priorities.size()-1 || J>-priorities[j]) {
-            answer = priorities.size()-loc;
+            J = priorities[i];
         }
     }
+    while (!q.empty())
+    {
+        answer++;
+        q.pop();
+        if (q.front().first == location-1) {
+            break;
+        }
+    } 
     return answer;
 }
 
 int main() {
-    vector<int> P = { 2,1,3,2 };
+    vector<int> P = {2,1,3,2};
     int location = 2;
-
+    solution(P, location);
 }
