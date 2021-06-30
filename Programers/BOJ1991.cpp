@@ -14,13 +14,13 @@ Node Tree[26];
 
 void inorder(int st) {
 	if (Tree[st].Left != -1)inorder(Tree[st].Left);
-	cout << char('A' + st) << ' ';
+	cout << char('A' + st);
 	if (Tree[st].Right != -1)inorder(Tree[st].Right);
 }
 
 
 void preorder(int st) {
-	cout << char('A' + st) << ' ';
+	cout << char('A' + st);
 	if (Tree[st].Left != -1) preorder(Tree[st].Left);
 	if (Tree[st].Right != -1) preorder(Tree[st].Right);
 }
@@ -29,7 +29,7 @@ void preorder(int st) {
 void postorder(int st) {
 	if (Tree[st].Left != -1) postorder(Tree[st].Left);
 	if (Tree[st].Right != -1) postorder(Tree[st].Right);
-	cout << char('A' + st) << ' ';
+	cout << char('A' + st);
 }
 
 int main() {
