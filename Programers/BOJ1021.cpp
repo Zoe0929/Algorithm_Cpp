@@ -6,8 +6,9 @@ using namespace std;
 int main() {
 	int N, M, A; // 입력받을 수들
 	int count = 0;
-	int tmp;
+	int tmp,index;
 	list<int> li;
+	list<int>::iterator iter = li.begin();
 
 	cin >> N >> M;
 	
@@ -18,13 +19,20 @@ int main() {
 	for (int i = 0; i < M; i++) {
 		cin >> A;
 		if(li.size() != N) li.push_front(tmp);
+		/*for (int j = 0; j < li.size();j++) {
+			int l = *(iter);
+			if (l == A) {
+				index = j;
+				break;
+			}
+		}*/
 		while (1) {
 			if (A == li.front()) {
 				tmp = li.front();
 				li.pop_front();
 				break;
 			}
-			else if (A > li.front()) {
+			else if (index<li.size()-index) {
 				li.push_back(li.front());
 				li.pop_front();
 				count++;
