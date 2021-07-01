@@ -1,44 +1,41 @@
 #include<iostream>
-#include<string>
 #include<list>
-#include<vector>
 
 using namespace std;
 
 int main() {
-	int N, M;
-	int c;
-	int answer = 0;
-	vector<int> result;
-	list<int> a;
-	cin >> N >> M;
-	for (int k = 1; k <= N; k++) {
-		a.push_back(k);
-	}
-	for (int i = 0; i < M; i++) {
-		cin >> c ;
-		result.push_back(c);
-	}
-	int n = 0 ;
-	while (1)
-	{
-		if (n+1 == M) break;
-		if (a.front() == result[n]) {
-			a.pop_front();
-			n++;
-		}
-		else if (a.front() < result[n]) {
-			a.push_front(a.back());
-			a.push_back(a.back() - 1);
-			answer++;
-		}
-		else if (a.front() > result[n]) {
-			a.push_front(a.front() + 1);
-			a.push_back(a.front());
-			answer++;
-		}
-		
-	}
-	cout << answer << endl;
+	int N, M, A; // 입력받을 수들
+	int count = 0;
+	int tmp;
+	list<int> li;
 
+	cin >> N >> M;
+	
+	for (int i = 1; i <= N; i++) {
+		li.push_back(i);
+	}
+
+	for (int i = 0; i < M; i++) {
+		cin >> A;
+		if(li.size() != N) li.push_front(tmp);
+		while (1) {
+			if (A == li.front()) {
+				tmp = li.front();
+				li.pop_front();
+				break;
+			}
+			else if (A > li.front()) {
+				li.push_back(li.front());
+				li.pop_front();
+				count++;
+			}
+			else {
+				li.push_front(li.back());
+				li.pop_back();
+				count++;
+			}
+		}
+	}
+	cout << count << endl;
+	return 0;
 }
