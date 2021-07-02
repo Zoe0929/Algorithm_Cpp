@@ -17,22 +17,21 @@ int main() {
 	}
 
 	for (int i = 0; i < M; i++) {
+		index = 0;
 		cin >> A;
 		if(li.size() != N) li.push_front(tmp);
-		/*for (int j = 0; j < li.size();j++) {
-			int l = *(iter);
-			if (l == A) {
-				index = j;
-				break;
-			}
-		}*/
+		for (auto val : li) {
+			if (val == A) break;
+			index++;
+		}
+		
 		while (1) {
 			if (A == li.front()) {
 				tmp = li.front();
 				li.pop_front();
 				break;
 			}
-			else if (index<li.size()-index) {
+			else if (index-1<li.size()-index+1) {
 				li.push_back(li.front());
 				li.pop_front();
 				count++;
@@ -43,6 +42,7 @@ int main() {
 				count++;
 			}
 		}
+
 	}
 	cout << count << endl;
 	return 0;
