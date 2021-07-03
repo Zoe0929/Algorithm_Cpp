@@ -19,7 +19,6 @@ int main() {
 	for (int i = 0; i < M; i++) {
 		index = 0;
 		cin >> A;
-		if(li.size() != N) li.push_front(tmp);
 		for (auto val : li) {
 			if (val == A) break;
 			index++;
@@ -31,7 +30,7 @@ int main() {
 				li.pop_front();
 				break;
 			}
-			else if (index-1<li.size()-index+1) {
+			else if (index<li.size()-index) {
 				li.push_back(li.front());
 				li.pop_front();
 				count++;
