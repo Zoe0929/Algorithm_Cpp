@@ -12,28 +12,19 @@ int solution(vector<int> priorities, int location) {
     for (int k = 0; k < priorities.size(); k++) {
         q.push(make_pair(k, priorities[k]));
     }
-
-    for (int i = 0; i < priorities.size(); i++) {
-        if (J < priorities[i]) {
-            for (int p = 0; p < count; p++) {
-                q.push(q.front());
-                q.pop();
-            }
-            J = priorities[i];
+    for (int i = 0; i++; i < q.size()) {
+        if (J <q.front().second) {
+            J = q.front;
         }
-        else
-        {
-            count++;
-        }
+        q.push(q.front());
+        q.pop();
     }
-    while (!q.empty())
+    while (true)
     {
         answer++;
-        if (q.front().first == location) {
-            break;
-        }
+        if (q.front().first == location) break;
         q.pop();
-    } 
+    }
     return answer;
 }
 
