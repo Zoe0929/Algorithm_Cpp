@@ -15,12 +15,12 @@ void BFS(int G[50][50], int x1, int y1) {
 		int x = q.front().first;
 		int y = q.front().second;
 		q.pop();
-		for (int i = 0; i < N; i++) {
+		for (int i = 0; i < 4; i++) {
 			int nx = x + dx[i];
 			int ny = y + dy[i];
-			if (nx > N || nx<0 || ny>N || ny < 0) continue;
-			else if (G[nx][ny] == 0) continue;
-			else if (G[nx][ny] == -1) {
+			if (nx >= N || nx<0 || ny>=N || ny < 0) continue;
+			if (G[nx][ny] == 0) continue;
+			if (G[nx][ny] == 1) {
 				G[nx][ny] = 0;
 				q.push({ nx,ny });
 			}
