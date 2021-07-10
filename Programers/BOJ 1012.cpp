@@ -1,33 +1,55 @@
 #include<iostream>
 #include<queue>
-#include<vector>
 
 using namespace std;
-const int MAZE_SIZE = 50;
 
+int T, M, N, K;
+int dx[] = { -1,1,0,0 };
+int dy[] = { 0,0,-1,1 };
 
-class Location2D {
-public:int row, col;
-	Location2D(int r = 0, int c = 0) { row = r; col = c; }
-	bool isNeighbor(Location2D& p) {
-		return ((row == p.row && (col == p.row - 1 || col == p.col + 1)))
-			|| (col == p.col && (row == p.row - 1 || row == p.row + 1));
-	}
-	bool operator ==(Location2D& p) { return row == p.row && col == p.col; }
-};
-int main() {
-	int T;
-	int M, N,K;
-	int X, Y;
-	vector<int> Location[5M] = { {0 },{0 } };
-	cin >> T;
-	cin >> M >> N >> K;
-	for (int i = 0; i < T; i++) {//테스크갯수만큼 반복 
-		for (int j = 0; j < K; j++) {//배추의 갯수만큼 위치 입력받기
-			cin >> X >> Y;
-			Location[X][Y] = 1;
-			
+void BFS(int G[50][50], int x1, int y1) {
+	queue<pair<int,int>> q;
+	q.push({ x1,y1 });
+
+	while (!q.empty()) {
+		int x = q.front().first;
+		int y = q.front().second;
+		q.pop();
+		for (int i = 0; i < N; i++) {
+			int nx = x + dx[i];
+			int ny = y + dy[i];
+			if (nx > N || nx<0 || ny>N || ny < 0) continue;
+			else if (G[nx][ny] == 0) continue;
+			else if (G[nx][ny] == -1) {
+				G[nx][ny] = 0;
+				q.push({ nx,ny });
+			}
 		}
 	}
+}
 
+
+int main() {
+	cin >> T;
+	for (int i = 0; i < T; i++) {
+		int X, Y;
+		int G[50][50] = { 0 };
+		cin >> M >> N >> K;
+		for (int k = 0; k < K; k++) {
+			cin >> X >> Y;
+			G[X][Y] = 1;
+		}
+		int count = 0;
+		for (int cx = 0; cx < M; cx++) {
+			for (int cy = 0; cy < N; cy++) {
+				if (G[cx][cy] == 0) continue;
+				else  {
+					BFS(G, cx, cy);
+					count++;
+				}
+			}
+		}
+		cout << count << endl;
+	}
+	return 0;
 }
