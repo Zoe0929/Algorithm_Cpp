@@ -3,7 +3,15 @@
 #include<queue>
 #include<vector>
 
+#include<deque> //덱이용해보기
+
 using namespace std;
+
+//익은 것이랑 빈 곳을 합쳐서 맵 크기이면 전체 탐색 완료 -> 데이 리턴
+// 안 익는 경우이면 .. -1 리턴..
+//
+
+
 
 int N, M; //가로 길이가 M이고 세로길이가 N -> map
 int tomato[100][100];
