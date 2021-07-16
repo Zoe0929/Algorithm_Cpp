@@ -4,26 +4,22 @@
 using namespace std;
 
 int T, M, N, K;
-int dx[] = { -1,1,0,0 };
-int dy[] = { 0,0,-1,1 };
+int dy[] = { -1,1,0,0 }; //ÁÂ¿ì»óÇÏ ¼ø
+int dx[] = { 0,0,-1,1 };
+bool visited[50][50] = { false };
+int G[50][50];
 
-void BFS(int G[50][50], int x1, int y1) {
-	queue<pair<int,int>> q;
-	q.push({ x1,y1 });
 
-	while (!q.empty()) {
-		int x = q.front().first;
-		int y = q.front().second;
-		q.pop();
-		for (int i = 0; i < 4; i++) {
-			int nx = x + dx[i];
-			int ny = y + dy[i];
-			if (nx >= N || nx<0 || ny>=N || ny < 0) continue;
-			if (G[nx][ny] == 0) continue;
-			if (G[nx][ny] == 1) {
-				G[nx][ny] = 0;
-				q.push({ nx,ny });
-			}
+void DFS(int G[50][50], int y1, int x1) {
+	for (int i = 0; i < 4; i++) {
+		int ny = y1 + dy[i];
+		int nx = x1 + dx[i];
+		if (ny < 0 || ny >= N || nx < 0 || nx >= N) {
+			continue;
+		}
+		if (G[ny][nx] && !visited[ny][nx]) {
+			visited[ny][nx] = true;
+			DFS(G, ny, nx);
 		}
 	}
 }
@@ -33,19 +29,21 @@ int main() {
 	cin >> T;
 	for (int i = 0; i < T; i++) {
 		int X, Y;
-		int G[50][50] = { 0 };
+
+		memset(G,0, sizeof(G));
+		memset(visited, 0, sizeof(visited));
 		cin >> M >> N >> K;
 		for (int k = 0; k < K; k++) {
 			cin >> X >> Y;
-			G[X][Y] = 1;
+			G[Y][X] = 1;
 		}
 		int count = 0;
-		for (int cx = 0; cx < M; cx++) {
-			for (int cy = 0; cy < N; cy++) {
-				if (G[cx][cy] == 0) continue;
-				else  {
-					BFS(G, cx, cy);
+		for (int cy = 0; cy < N; cy++) {
+			for (int cx = 0; cx < M; cx++) {
+				if (G[cy][cx] == 1 && !visited[cy][cx]) {
 					count++;
+					visited[cy][cx]=true;
+					DFS(G,cy, cx);
 				}
 			}
 		}
