@@ -55,6 +55,7 @@ int main() {
 		for (int x = 0; x < M; x++) {
 			cin >> tomato[y][x];
 			if (tomato[y][x] == 1) {
+				visited[y][x] = true;
 				st_y = y;
 				st_x = x;
 			}
@@ -71,3 +72,13 @@ int main() {
 		}
 	}
 }
+
+void check() {
+	for (int i = 0; i < M; i++) {
+		for (int j = 0; j < N; j++) {
+			if (tomato[i][j] == 0 && !visited[i][j]) {
+				days = -1; break;
+			}
+		}
+	}
+}//구글링, days (토마토가 모두 익지 않는 경우 체크하는 함수)
