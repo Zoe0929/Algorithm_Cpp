@@ -2,7 +2,7 @@
 #include<vector>
 #include<queue>
 
-const int MAX = 10000+1;
+const int MAX = 100000+1;
 using namespace std;
 bool visited[MAX];
 
