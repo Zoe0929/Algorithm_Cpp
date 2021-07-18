@@ -2,9 +2,9 @@
 #include<vector>
 #include<queue>
 
-
+const int MAX = 10000+1;
 using namespace std;
-bool visited[100000];
+bool visited[MAX];
 
 
 int BFS(int N, int K) {
@@ -22,11 +22,11 @@ int BFS(int N, int K) {
 			loc.push({ cloc - 1, csec + 1 });
 			visited[cloc - 1] = true;
 		}
-		if (cloc + 1 < 100000 && !visited[cloc + 1]) {
+		if (cloc + 1 < MAX && !visited[cloc + 1]) {
 			loc.push({ cloc + 1, csec + 1 });
 			visited[cloc + 1] = true;
 		}
-		if (cloc * 2 >= 0 && !visited[cloc * 2 ]) {
+		if (cloc * 2 < MAX && !visited[cloc * 2 ]) {
 			loc.push({ cloc * 2 , csec + 1 });
 			visited[cloc *2 ] = true;
 		}
@@ -41,4 +41,5 @@ int main() {
 	int N, K;
 	cin >> N >> K;
 	cout<<BFS(N, K);
+	return 0;
 }
