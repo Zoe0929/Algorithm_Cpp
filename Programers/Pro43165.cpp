@@ -13,8 +13,8 @@ void DFS(vector<int> numbers, int target, int count=0, int sum=0) {
         }
         return;
     }
-    DFS(numbers, target, count + 1, sum - numbers[count + 1]);
-    DFS(numbers, target, count + 1, sum + numbers[count + 1]);
+    DFS(numbers, target, count + 1, sum - numbers[count]);
+    DFS(numbers, target, count + 1, sum + numbers[count]);
 }
 
 int solution(vector<int> numbers, int target) {
