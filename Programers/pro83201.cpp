@@ -1,5 +1,7 @@
 #include <string>
 #include <vector>
+#include<algorithm>
+#include<iostream>
 
 using namespace std;
 
@@ -13,9 +15,17 @@ string solution(vector<vector<int>> scores) {
         for (int j = 0; j < scores.size(); j++) {
             if (max < scores[j][i]) max = scores[j][i];
             if (min > scores[j][i]) min = scores[j][i];
+            auto it = find(scores[j].begin(), scores[j].end(),scores[j][i]);
+            vector<int> temp = scores[j];
             if (i == j && (scores[j][i]==max||scores[j][i]==min)) {
-                scores[j][i] = 0;
-                student--;
+                sort(temp.begin(), temp.end());
+                if (temp.begin() == temp.begin() + sizeof(int) || temp.end() == temp.end() - sizeof(int))//'유일한 값'이 아닌 경우
+                {
+                }
+                else {
+                    scores[j][i] = 0;
+                    student--;
+                }
             }
             sum += scores[j][i];
     
