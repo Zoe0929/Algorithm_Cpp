@@ -20,13 +20,12 @@ string solution(vector<vector<int>> scores) {
             if (i != j && scores[j][i] == selfscore) frag = false;
             if (max < scores[j][i]) max = scores[j][i];
             if (min > scores[j][i]) min = scores[j][i];
-            if (frag && (scores[j][i]==max||scores[j][i]==min)) {
-                scores[j][i] = 0;
+            sum += scores[j][i];
+        }       
+            if (frag && (selfscore==max||selfscore==min)) {
+                sum -= selfscore;
                 student--;
             }
-            sum += scores[j][i];
-    
-        }       
         if ((float)(sum / student) >= 90)
             answer += "A";
         else if ((float)(sum / student) >= 80)
