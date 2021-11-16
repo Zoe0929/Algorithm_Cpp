@@ -6,12 +6,12 @@ long long solution(int a, int b) {
     long long answer = 0;
     if(a<b){
         for(int i=a;i<=b;i++){
-            answer+=a;
+            answer+=i;
         }
     }
     else{
         for(int i=b;i<=a;i++)
-            answer+=b;
+            answer+=i;
     }
     return answer;
 }
