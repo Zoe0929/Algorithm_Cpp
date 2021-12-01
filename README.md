@@ -1,7 +1,7 @@
 # STUDY
 
 
-###C언어의 동적할당
+### C언어의 동적할당
 ___
 1. 동적할당?
 - 프로그램 실행중에 동적으로 메모리를 할당하는 것
@@ -33,3 +33,38 @@ char* solution(int num) {
     return answer;
 }
 ```
+
+### STL vector 
+___
+1. vector : 자동으로 메모리가 할당되는 배열
+- <vector> 헤더파일 include 후 사용가능
+- 선언
+    ```vector<[데이터타입]> [배열명];```
+- 생성자
+    
+    
+    비어있는 vector v 생성
+    ```
+    vector<int> v;
+    ```
+    크기가 5인 vector v 생성
+    ```
+    vector<int> v(5);
+    ```
+    2로 초기화된 5개의 원소를 가지는 vector v를 생성
+    ```
+    vector<int> v(5, 2);
+    ```
+    v2는 v1 vector를 복사해서 생성
+    ```
+    vector<int> v1(5, 2);
+    vector<int> v2(v1);
+    ```
+    
+### vector 정렬: ```sort()``` 함수
+    ___
+    1. ```sort([시작 위치],[종료 위치])```: 시작 위치부터 종료 위치까지 요소를 정렬한다. 
+    EX) 로또 최저 순위, 최고 순위
+    ```
+    sort(lottos.begin(), lottos.end());
+    ```
