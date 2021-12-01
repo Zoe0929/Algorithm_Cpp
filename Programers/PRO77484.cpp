@@ -12,19 +12,15 @@ vector<int> solution(vector<int> lottos, vector<int> win_nums) {
     for(int i=0;i<lottos.size();i++){
         if(lottos[i]==0){
             cnt_b++;
-            break;
         }
         for(int j=0;j<win_nums.size();j++){
             if(lottos[i]==win_nums[j]) {
                 cnt++;
-                break;
                 }
         }
     }
-    if(cnt>=cnt_b)
-        cnt_b+=cnt;
-    else 
-        cnt=cnt_b;
+    cnt_b+=cnt;
+    
     if(cnt_b>5){
         answer.push_back(1);
     }
