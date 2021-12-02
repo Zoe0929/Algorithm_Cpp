@@ -69,3 +69,8 @@ ___
 EX) 로또 최저 순위, 최고 순위    
     ```sort(lottos.begin(), lottos.end());```
     lottos vector의 첫 요소부터 마지막 요소까지 정렬
+    
+    
+### string erase 함수
+___
+1.  ```erase()``` 함수: string 객체의 중간의 어느값을 삭제한다. 
