@@ -17,9 +17,9 @@ string solution(string new_id) {
         }
     }   
     int i = 1;
-    while (i < answer.length()){
-        if (answer[i - 1] == '.' && answer[i] == '.'){
-            answer.erase(answer.begin() + i);
+    while (i < new_id.length()){
+        if (new_id[i - 1] == '.' && new_id[i] == ){
+            new_id.erase(new_id.begin() + i);
             continue;
         }
         i++;
@@ -36,5 +36,6 @@ string solution(string new_id) {
             new_id.push_back(new_id[new_id.length()-1]);
             }while(new_id.length()!=3);
     }
+    answer=new_id;
     return answer;
 }
