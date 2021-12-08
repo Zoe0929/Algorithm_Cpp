@@ -1,3 +1,4 @@
+#include<iostream>
 #include <string>
 #include <vector>
 
@@ -43,4 +44,16 @@ string solution(vector<int> numbers, string hand) {
         }
     }
     return answer;
+}
+
+int main() {
+    string hand="right";
+    int numberss[]={1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5};
+    vector<int> numbers;
+    for(int i=0;i<11;i++){
+        numbers.push_back(numberss[i]);
+    }
+    string answer=solution(numbers,hand);
+    cout<<answer<<endl;
+
 }
