@@ -1,17 +1,17 @@
 #include <string>
 #include <vector>
+#include<algorithm>
 
 using namespace std;
 
 string solution(vector<string> participant, vector<string> completion) {
     string answer = "";
-    for(int i=0;i<participant.size();i++){
-        for(int j=0;j<completion.size();j++){
-            if(participant[i]==completion[j]){
-                participant.erase(participant.begin()+i);
-            }
+    sort(participant.begin(),participant.end());
+    sort(completion.begin(),completion.end());
+    for(int j=0;j<completion.size();j++){
+                if(participant[j]!=completion[j]){
+                    return participant[j];
+                }
         }
-    }
-    answer=participant[0];
-    return answer;
+    return participant[participant.size()-1];
 }
