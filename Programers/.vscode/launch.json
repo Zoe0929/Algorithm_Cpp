@@ -2,15 +2,15 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "g++ build and debug active file",
-      "type": "cppdbg",
+      "name": "c++ debug",
+      "type": "lldb",
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}",
       "args": [],
-      "stopAtEntry": false,
+      "stopAtEntry": true,
       "cwd": "${workspaceFolder}",
       "environment": [],
-      "externalConsole": false,
+      "externalConsole": true,
       "MIMode": "lldb",
       "preLaunchTask": "g++ build active file"
     },
@@ -22,11 +22,11 @@
         ""
       ],
       "stopAtEntry": true,
-      "cwd": "/Users/ljh/Documents/GitHub/STUDY/Programers",
+      "cwd": "/Users/ljh/Documents/GitHub/STUDY/Programers/Debug",
       "environment": [],
-      "program": "/Users/ljh/Documents/GitHub/STUDY/Programers/build/Debug/outDebug",
+      "program": "/Users/ljh/Documents/GitHub/STUDY/Programers/Debug/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
-      "MIMode": "gdb",
+      "MIMode": "lldb",
       "externalConsole": false
     }
   ]
