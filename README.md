@@ -74,9 +74,55 @@ EX) 로또 최저 순위, 최고 순위
 ### string erase 함수
 ___
 1.  ```erase()``` 함수: string 객체의 중간의 어느값을 삭제한다. 
+
+    
+### 벡터의 중복 제거
+___
+1. ```sort()```함수 이용하여 정렬 
+2. ```v.earse(unique())```이용하여 정렬
+```
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<string>
+using namespace std;
+
+vector<string> s;
+
+int main()
+{
+	s.push_back("a");
+	s.push_back("b");
+	s.push_back("a");
+	s.push_back("c");
+	s.push_back("b");
+	s.push_back("a");
+	s.push_back("b");
+	
+	printf("막넣은 백터s\n");
+	for(int i=0;i<s.size();i  )
+		cout<<s[i]<<"\t";
+	printf("\n\n");
+	
+	printf("정렬 sort(s.begin(), s.end());\n");
+	sort(s.begin(), s.end());
+	for(int i=0;i<s.size();i  )
+		cout<<s[i]<<"\t";
+	printf("\n\n");
+
+	printf("백터.erase(unique(s.begin(),s.end()),s.end())\n");
+	s.erase(unique(s.begin(),s.end()),s.end());
+	for(int i=0;i<s.size();i  )
+		cout<<s[i]<<"\t";
+	printf("\n\n");
+}
+```
     
 ### 탐색 알고리즘
 ___
 1. 맵(map) (또는 사전) : 자료를 저장하고 키를 이용해 원하는 자료를 빠르게 찾을 수 있도록 하는 자료구조 (키를 가진 레코드의 집합)
 - 키를 가진 레코드, 또는 엔트리 (키-값 쌍)을 테이블에 저장한다. 
 - 각 키는 유일하고 맵에 저장되는 키와 값의 자료형은 모두 가능  
+
+    
+    
