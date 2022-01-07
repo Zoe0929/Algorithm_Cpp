@@ -6,19 +6,8 @@ using namespace std;
 
 long long solution(long long n) {
     long long answer = 0;
-    vector<int> temp;
-    while (n>=1)
-    {
-        temp.push_back(n%10);
-        n/=10;
-    }
-    sort(temp.begin(),temp.end());
-    for(int i=0;i<temp.size();i++){
-        answer+=pow(temp[i]*10,i);
-    }
-    
+    string s=to_string(n);
+    sort(s.begin(),s.end(),greater<char>());
+    answer=stoll(s);   
     return answer;
-}
-int main(){
-    solution(118372);
 }
