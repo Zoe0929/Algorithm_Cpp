@@ -7,14 +7,14 @@ int main(){
     cin>>n;
     for(int i=0;i<n;i++){
         string str;
-        bool b=true;
+        stack<char> s;
         cin>>str;
         for(int i=0;i<str.size();i++){
-            stack<char> s;
+            
             if(str[i]=='('){
                 s.push(str[i]);
             }
-            else s.pop();
+            else if(!s.empty()) s.pop();
         }
         if(s.size()==0) cout<<"YES\n";
         else cout<<"NO\n";
