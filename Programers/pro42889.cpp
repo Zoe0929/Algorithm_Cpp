@@ -5,13 +5,13 @@ using namespace std;
 
 vector<int> solution(int N, vector<int> stages) {
     vector<int> cha(N,0);
-    vector<int> answer;
+    vector<int> fail;
+
     for(int i=0;i<stages.size();i++){
-        for(int j=0;j<N;j++){
-            if(stages[i]==N+1) answer[N-1]++;
-            else if(stages[i]==j+1) answer[j]++;
-        }
+        cha[stages[i]-2]++;
+    }
+    for(int k=0;k<cha.size();k++){
+        
     }
     
-    return answer;
 }
