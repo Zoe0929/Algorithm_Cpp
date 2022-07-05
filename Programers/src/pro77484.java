@@ -1,7 +1,10 @@
 public class pro77484 {
-}
-class Solution {
-    public String solution(int[] numbers, String hand) {
+    public static void main(String[] args) {
+        int[] numbers = {1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5};
+        String hand = "right";
+        String ans = solution(numbers, hand);
+        System.out.println(ans);
+} public String solution(int[] numbers, String hand) {
         String answer = "";
         int lefthand=11;
         int righthand=12;
@@ -37,5 +40,7 @@ class Solution {
         }
         return answer;
     }
+class Solution {
+
 
 }
