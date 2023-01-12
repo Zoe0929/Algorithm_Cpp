@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class pro12912 {
     public static void main(String[] args) {
 
