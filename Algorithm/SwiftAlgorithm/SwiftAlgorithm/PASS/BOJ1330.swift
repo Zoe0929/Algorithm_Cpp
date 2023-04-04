@@ -4,6 +4,7 @@
 //
 //  Created by 지희의 MAC on 2023/04/02.
 //
+/*
 
 import Foundation
 
@@ -21,3 +22,4 @@ if num1 > num2 {
 if num1 == num2 {
     print("==")
 }
+*/

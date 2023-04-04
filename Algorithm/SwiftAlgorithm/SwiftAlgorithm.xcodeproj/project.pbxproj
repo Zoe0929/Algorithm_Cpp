@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3637A4A629DB224C00289A15 /* BOJ11382.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637A4A529DB224C00289A15 /* BOJ11382.swift */; };
+		3637A4AA29DC668500289A15 /* BOJ10171.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637A4A929DC668500289A15 /* BOJ10171.swift */; };
 		36945F0729D7403400CA03DF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36945F0629D7403400CA03DF /* main.swift */; };
-		36945F2129D74BE200CA03DF /* BOJ10926.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36945F2029D74BE200CA03DF /* BOJ10926.swift */; };
-		36945F2329D74D2900CA03DF /* BOJ18108.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36945F2229D74D2900CA03DF /* BOJ18108.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3637A4A529DB224C00289A15 /* BOJ11382.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOJ11382.swift; sourceTree = "<group>"; };
+		3637A4A929DC668500289A15 /* BOJ10171.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOJ10171.swift; sourceTree = "<group>"; };
 		36945F0329D7403400CA03DF /* SwiftAlgorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAlgorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		36945F0629D7403400CA03DF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		36945F2029D74BE200CA03DF /* BOJ10926.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOJ10926.swift; sourceTree = "<group>"; };
-		36945F2229D74D2900CA03DF /* BOJ18108.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOJ18108.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3637A4A429DB1C8B00289A15 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				3637A4A929DC668500289A15 /* BOJ10171.swift */,
+				3637A4A529DB224C00289A15 /* BOJ11382.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		36945EFA29D7403400CA03DF = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				36945F0629D7403400CA03DF /* main.swift */,
-				36945F2229D74D2900CA03DF /* BOJ18108.swift */,
-				36945F2029D74BE200CA03DF /* BOJ10926.swift */,
+				3637A4A429DB1C8B00289A15 /* New Group */,
 			);
 			path = SwiftAlgorithm;
 			sourceTree = "<group>";
@@ -126,9 +134,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36945F2329D74D2900CA03DF /* BOJ18108.swift in Sources */,
-				36945F2129D74BE200CA03DF /* BOJ10926.swift in Sources */,
 				36945F0729D7403400CA03DF /* main.swift in Sources */,
+				3637A4AA29DC668500289A15 /* BOJ10171.swift in Sources */,
+				3637A4A629DB224C00289A15 /* BOJ11382.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
