@@ -5,14 +5,6 @@
 //  Created by 지희의 MAC on 2023/04/01.
 //
 
-import Foundation
-
-let input = readLine()!.split(separator: " ").map { Int(String($0))! }
-
-var a = input.reduce(0, +)
-
-print(input)
-print(a)
 
 /*
 func dfs (_ y: Int,_ x: Int) {
